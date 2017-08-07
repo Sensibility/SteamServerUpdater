@@ -46,7 +46,7 @@ class AutoUpdater():
 		p = ServiceUtil.ProcessUtil.GetProcessByName(self.GAME_PROCESS_NAME)
 		if(p):
 			print("Process found with id {}, killing...".format(str(p.pid)))
-			ServiceUtil.ProcessUtil.KillProcess(p.pid)
+			ServiceUtil.ProcessUtil.KillProcess(p)
 			print("Done")
 		else:
 			print("None found")

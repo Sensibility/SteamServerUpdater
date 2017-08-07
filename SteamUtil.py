@@ -9,8 +9,6 @@ class SteamManager():
 		self.apiKey = apiKey
 		self.appId = appId
 
-		self.InitAPIUrl()
-
 	def CheckVersion(self):
 		json = self.GetAPIPage()
 		if(json['success']):
@@ -25,19 +23,20 @@ class SteamManager():
 			return None
 
 	def InitAPIUrl(self):
-		self.STEAM_API_URL = self.STEAM_API_URL.format(self.apiKey, self.appId, self.version)
+		return self.STEAM_API_URL.format(self.apiKey, self.appId, self.version)
 
 	def GetServerVersion(self):
 		if(os.path.isfile(self.versionFile)):
 			with open(self.versionFile) as f:
-				return f.read()
+				self.version = str(f.read())
+				return self.version
 
 	def WriteServerVersion(self):
 		with open(self.versionFile, "w") as f:
 			f.write(str(self.version))
 
 	def GetAPIPage(self):
-		with urllib.request.urlopen(self.STEAM_API_URL) as resp:
+		with urllib.request.urlopen(self.InitAPIUrl()) as resp:
 			data = resp.read()
 			encoding = resp.info().get_content_charset('utf-8')
 			return json.loads(data.decode(encoding))['response']
@@ -45,11 +44,11 @@ class SteamManager():
 	def CheckStatus(self):
 		json = self.GetAPIPage()
 		if(json['success']):
-			self.version = json["required_version"]
-			self.WriteServerVersion()
 			if(json['up_to_date']):
 				return self.version
 			else:
+				self.version = json["required_version"]
+				self.WriteServerVersion()
 				return False
 		else:
 			return None

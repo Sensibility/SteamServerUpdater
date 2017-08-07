@@ -9,12 +9,12 @@ class ProcessUtil():
 				return p
 		
 	@staticmethod
-	def KillProcess(id):
+	def KillProcess(p):
 		try:
 			p.terminate()
 			return True
 		except:
-			print("Could not terminate {}".format(str(n)))
+			print("Could not terminate {}".format(str(p.pid)))
 			sys.exit(1)
 
 	@staticmethod
