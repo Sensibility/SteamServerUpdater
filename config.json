@@ -1,0 +1,14 @@
+{
+	"steamcmd_location": "C:\\path\\to\\steamcmd",
+	"steam_api_key": "https://steamcommunity.com/dev/apikey",
+	"version_file": "version.txt",
+	"Games": [{
+			"app_id": "",
+			"game_name": "Citadel: Forged With Fire",
+			"game_dir": "C:\\path\\to\\game\\executable",
+			"game_exe": "start.bat",
+			"steamcmd_exe": "steamcmd.bat",
+			"process_name": "CitadelServer-Win64-Shipping.exe"
+	}]
+}
+
