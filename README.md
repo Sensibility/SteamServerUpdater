@@ -1,4 +1,4 @@
-[![Build Status](https://superphage.us:8443/app/rest/builds/buildType\(id:SteamServerUpdater\)/statusIcon)](https://superphage.us:8443/viewType.html?buildTypeId=SteamServerUpdater&guest=1)
+[![Build Status](https://superphage.us:8443/app/rest/builds/buildType\(id:SteamServerUpdater)/statusIcon)](https://superphage.us:8443/viewType.html?buildTypeId=SteamServerUpdater&guest=1)
 
 # SteamServerUpdater
 Auto Updater for Steam Game Servers
