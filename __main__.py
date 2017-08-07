@@ -64,10 +64,10 @@ class AutoUpdater():
 	def CheckGame(self):
 		print("Checking {}...".format(self.GAME_NAME))
 		self.GetGameServerVersion()
-		# if(self.CheckGameServerVersion()):
-		# 	self.KillGameServer()
-		# 	self.UpdateGameServer()
-		# 	self.StartGameServer()
+		if(self.CheckGameServerVersion()):
+			self.KillGameServer()
+			self.UpdateGameServer()
+			self.StartGameServer()
 		print("Done checking {} for updates\n\n".format(self.GAME_NAME))
 
 
