@@ -74,7 +74,7 @@ class AutoUpdater():
 def GetConfig():
 	print("Reading in config file...")
 	dir = os.path.dirname(os.path.realpath(sys.argv[0]))
-	with open(dir + "\\config.json") as f:
+	with open(os.path.join(dir, "config.json")) as f:
 		print("Done\n")
 		return json.load(f)
 
